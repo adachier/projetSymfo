@@ -9,16 +9,18 @@
     <div class="container">
         <h2>Minéralogie Brute</h2>
         <div class="row flex">
+            {% for mineral in mineraux %}
             <div class="col-3">
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <a href="{{ path('blog_show') }}" class="btn btn-outline-primary">Titre du bien</a>
+                            <a href="{{ path('blog_show') }}" class="btn btn-outline-primary">{{mineral.title}}</a>
                         </h5>
-                        <p class="card-text">Continent, Région, Pays</p>
+                        <p class="card-text">{{mineral.continent}} {{mineral.pays}}</p>
                     </div>
                 </div>
             </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

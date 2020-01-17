@@ -2,18 +2,21 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\MineralRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class BlogController extends AbstractController
 {
     /**
      * @Route("/blog", name="blog")
      */
-    public function index()
+    public function index(MineralRepository $repository)
     {
+        $mineraux = $repository->findAll();
         return $this->render('blog/index.html.twig', [
             'controller_name' => 'BlogController',
+            'mineraux' => $mineraux
         ]);
     }
 
@@ -22,10 +25,11 @@ class BlogController extends AbstractController
      *
      * @return void
      */
-    public function home()
+    public function home(MineralRepository $repository)
     {
+        $mineraux = $repository->findAll();
         return $this->render('blog/home.html.twig',[
-
+            'mineraux' => $mineraux
         ]);
     }
 
