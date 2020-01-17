@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mineral index{% endblock %}
+
+{% block body %}
+    <h1>Mineral index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Continent</th>
+                <th>Region</th>
+                <th>Pays</th>
+                <th>Mine</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Gps</th>
+                <th>Purete</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for mineral in minerals %}
+            <tr>
+                <td>{{ mineral.id }}</td>
+                <td>{{ mineral.title }}</td>
+                <td>{{ mineral.continent }}</td>
+                <td>{{ mineral.Region }}</td>
+                <td>{{ mineral.pays }}</td>
+                <td>{{ mineral.Mine }}</td>
+                <td>{{ mineral.name }}</td>
+                <td>{{ mineral.Price }}</td>
+                <td>{{ mineral.Gps }}</td>
+                <td>{{ mineral.Purete }}</td>
+                <td>
+                    <a href="{{ path('mineral_show', {'id': mineral.id}) }}">show</a>
+                    <a href="{{ path('mineral_edit', {'id': mineral.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="11">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('mineral_new') }}">Create new</a>
+{% endblock %}
