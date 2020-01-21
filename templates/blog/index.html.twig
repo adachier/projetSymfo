@@ -13,10 +13,8 @@
             <div class="col-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="{{ path('blog_show') }}" class="btn btn-outline-primary">{{mineral.title}}</a>
-                        </h5>
-                        <p class="card-text">{{mineral.continent}} {{mineral.pays}}</p>
+                    <a href="{{ path ('blog_show', {id:mineral.id, slug: mineral.slug}) }}"><h5 class="card-title btn btn-outline-primary" style="width: 100%; height: 50px;">{{mineral.title}}</h5></a>
+                        <p class="card-text">{{mineral.pays}} <br> {{mineral.continent}}</p>
                     </div>
                 </div>
             </div>

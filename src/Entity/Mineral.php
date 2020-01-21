@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Cocur\Slugify\Slugify;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\MineralRepository")
@@ -71,11 +72,17 @@ class Mineral
         return $this->title;
     }
 
+
     public function setTitle(string $title): self
     {
         $this->title = $title;
 
         return $this;
+    }
+
+    public function getSlug(): string
+    {
+        return(new Slugify())->slugify($this->title);
     }
 
     public function getContinent(): ?string

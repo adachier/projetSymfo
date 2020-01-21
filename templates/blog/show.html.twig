@@ -4,15 +4,42 @@
 
 {% block body %}
     <div class="jumbotron mt-4">
-        <h1>Le Minéral</h1>
+        <h1>{{mineral.title}}</h1>
     </div>
     <div class="container">
         <table class="table table-striped">
-            <thead>
-                <th>Continent</th>
-                <th>Pays</th>
-                <th>Mine</th>
-            </thead>
+            <tr>
+                <td>Nom de la pierre</td>
+                <td>{{mineral.name}}</td>
+            </tr>
+            <tr>
+                <td>Continent</td>
+                <td>{{mineral.continent}}</td>
+            </tr>
+            <tr>
+                <td>Pays</td>
+                <td>{{mineral.pays}}</td>
+            </tr>
+            <tr>
+                <td>Région / Etat</td>
+                <td>{{mineral.Region}}</td>
+            </tr>
+            <tr>
+                <td>Mine</td>
+                <td>{{mineral.Mine}}</td>
+            </tr>
+            <tr>
+                <td>Coordonnées GPS</td>
+                <td>{{mineral.Gps}}</td>
+            </tr>
+            <tr>
+                <td>Prix</td>
+                <td>{{mineral.Price}}</td>
+            </tr>
+            <tr>
+                <td>Pureté</td>
+                <td>{{mineral.Purete}}</td>
+            </tr>
         </table>
     </div>
 {% endblock %}
