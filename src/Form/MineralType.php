@@ -21,6 +21,7 @@ class MineralType extends AbstractType
             ->add('Price')
             ->add('Gps')
             ->add('Purete')
+            ->add('img')
         ;
     }
 

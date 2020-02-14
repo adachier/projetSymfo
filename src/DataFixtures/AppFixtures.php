@@ -19,10 +19,14 @@ class AppFixtures extends Fixture
             -> setRegion('Minas Gerais')
             -> setMine('Mine de Jonas')
             -> setGps('19°12\'02" S - 41°26\'36\" W')
-            -> setPrice(false);
+            -> setPrice(false)
+            -> setImg('/images/tourmaline.jpg');
         $manager -> persist($mineral);
-        // $product = new Product();
-        // $manager->persist($product);
+        $mineral = new Mineral();
+        $manager->persist($mineral);
+
+        $manager->flush();
+
 
         $mineral2 = new Mineral();
         $mineral2
@@ -33,8 +37,14 @@ class AppFixtures extends Fixture
             -> setRegion('Utah')
             -> setMine('Wah Wah Mountains')
             -> setGps('38°26\'03" N - 113°33\'46\" W')
-            -> setPrice(false);
+            -> setPrice(false)
+            -> setImg('/images/beryl.jpg');
         $manager -> persist($mineral2);
+        $mineral2 = new Mineral();
+        $manager->persist($mineral2);
+
+        $manager->flush();
+
 
         $mineral3 = new Mineral();
         $mineral3
@@ -45,8 +55,14 @@ class AppFixtures extends Fixture
             -> setRegion('Cordillère Raura')
             -> setMine('Uchucchaua')
             -> setGps('10°37\'26" S - 76°41\'19\" W')
-            -> setPrice(false);
+            -> setPrice(false)
+            -> setImg('/images/rhodochrosite.jpg');
         $manager -> persist($mineral3);
+        $mineral3 = new Mineral();
+        $manager->persist($mineral3);
+
+        $manager->flush();
+
 
         $mineral4 = new Mineral();
         $mineral4
@@ -57,8 +73,11 @@ class AppFixtures extends Fixture
             -> setRegion('Mogok')
             -> setMine(false)
             -> setGps('22°57\'35" N - 96°30\'13\" E')
-            -> setPrice(false);
+            -> setPrice(false)
+            -> setImg('/images/spinel.jpg');
         $manager -> persist($mineral4);
+        $mineral4 = new Mineral();
+        $manager->persist($mineral4);
 
         $manager->flush();
     }
